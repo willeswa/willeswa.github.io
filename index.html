@@ -1,345 +1,472 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Willies Wanjala — Senior Full-Stack & AI Engineer</title>
-<meta name="description" content="Willies Wanjala is a senior full-stack and AI engineer based in Nairobi. He ships production AI/LLM apps, React Native mobile, and AWS serverless backends." />
-<meta name="theme-color" content="#0b0b10" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willies Wanjala</title>
+<meta name="description" content="Senior full-stack & AI engineer in Nairobi. Currently at Kamoa.">
+<meta name="theme-color" content="#f1ede4">
+<meta property="og:title" content="Willies Wanjala">
+<meta property="og:description" content="Senior full-stack & AI engineer. Nairobi.">
+<meta property="og:url" content="https://willeswa.github.io/">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Willies Wanjala — Senior Full-Stack & AI Engineer" />
-<meta property="og:description" content="I build production AI and full-stack apps that ship — credit risk scoring, mobile money disbursements, on-device LLMs." />
-<meta property="og:url" content="https://willeswa.github.io/" />
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=jetbrains-mono:400,500,700&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #0b0b10;
-    --bg-2: #14141d;
-    --bg-3: #1c1c28;
-    --fg: #e8e8ee;
-    --fg-2: #a3a3b3;
-    --accent: #2cd573;
-    --accent-2: #88e1ad;
-    --border: #2a2a36;
-    --max-w: 980px;
+    --bg: #f1ede4;
+    --fg: #100f0d;
+    --fg-2: #6b6760;
+    --fg-3: #a8a298;
+    --line: #d8d2c4;
+    --line-2: #ebe5d6;
+    --accent: #b73f1d;
   }
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    padding: 0 32px;
   }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
-  a:hover { color: var(--accent-2); border-bottom-style: solid; }
-  .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-  .accent { color: var(--accent); }
-  .muted { color: var(--fg-2); }
-  code { background: var(--bg-3); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  ::selection { background: var(--fg); color: var(--bg); }
 
-  /* Header */
-  header { padding: 64px 0 32px; border-bottom: 1px solid var(--border); }
-  header h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; line-height: 1.15; }
-  header h1 .role { color: var(--fg-2); font-weight: 400; }
-  header .tagline { font-size: 1.15rem; color: var(--fg-2); margin: 0 0 24px; max-width: 640px; }
-  .stats { display: flex; flex-wrap: wrap; gap: 24px 40px; margin-top: 24px; }
-  .stat { line-height: 1.3; }
-  .stat .num { font-size: 1.6rem; font-weight: 600; color: var(--accent); display: block; }
-  .stat .label { font-size: 0.85rem; color: var(--fg-2); text-transform: uppercase; letter-spacing: 0.04em; }
-  .links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; font-size: 0.95rem; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-  /* Sections */
-  section { padding: 56px 0; border-bottom: 1px solid var(--border); }
-  section h2 { font-size: 1.35rem; margin: 0 0 24px; letter-spacing: -0.01em; }
-
-  /* About */
-  .about p { color: var(--fg); max-width: 720px; margin: 0 0 16px; }
-  .about p.lead { font-size: 1.1rem; color: var(--fg); }
-
-  /* Projects */
-  .projects { display: grid; grid-template-columns: 1fr; gap: 18px; }
-  .project {
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 24px;
-    transition: border-color 150ms ease, transform 150ms ease;
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 88px 0 56px;
   }
-  .project:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .project h3 {
-    margin: 0 0 6px;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+
+  /* ── identity ── */
+  .id {
+    font-size: clamp(56px, 12vw, 132px);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    font-weight: 700;
+    margin-bottom: 36px;
   }
-  .project h3 .badge {
-    background: var(--bg-3);
+  .id .row { display: block; }
+  .id .row + .row { margin-top: -0.04em; }
+
+  .meta {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 8px 24px;
     color: var(--fg-2);
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 3px 8px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 1px solid var(--border);
+    margin-bottom: 96px;
+    max-width: 560px;
   }
-  .project h3 .badge.live { color: var(--accent); border-color: var(--accent); }
-  .project .tagline { color: var(--fg-2); margin: 0 0 12px; font-size: 0.97rem; }
-  .project p { margin: 0 0 12px; color: var(--fg); }
-  .project .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-    font-size: 0.78rem;
-  }
-  .project .stack span {
-    background: var(--bg-3);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 3px 10px;
-    color: var(--fg-2);
-  }
-  .project .links-row { margin-top: 14px; font-size: 0.9rem; display: flex; gap: 18px; flex-wrap: wrap; }
-
-  /* Skills grid */
-  .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
-  .skill-grid h3 { font-size: 0.85rem; color: var(--fg-2); margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
-  .skill-grid ul { margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
-  .skill-grid li { padding: 4px 0; color: var(--fg); }
-
-  /* Experience */
-  .exp { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border); }
-  .exp:last-child { border-bottom: none; }
-  .exp .when { color: var(--fg-2); font-size: 0.9rem; }
-  .exp .what h3 { margin: 0 0 4px; font-size: 1.02rem; }
-  .exp .what .where { color: var(--fg-2); font-size: 0.9rem; margin-bottom: 6px; }
-  .exp .what p { margin: 6px 0 0; color: var(--fg); font-size: 0.96rem; }
-
-  /* Contact */
-  .contact { text-align: center; padding: 56px 0 80px; }
-  .contact h2 { margin-bottom: 16px; }
-  .contact p { color: var(--fg-2); max-width: 540px; margin: 0 auto 24px; }
-  .contact .cta {
+  .meta dt { color: var(--fg-2); }
+  .meta dd { color: var(--fg); }
+  .meta dd a { border-bottom: 1px solid var(--line); padding-bottom: 1px; transition: color 200ms ease, border-color 200ms ease; }
+  .meta dd a:hover { color: var(--accent); border-color: var(--accent); }
+  .meta .dot {
     display: inline-block;
-    padding: 14px 28px;
+    width: 7px; height: 7px;
+    border-radius: 50%;
     background: var(--accent);
-    color: #0b0b10;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 1rem;
-    border-bottom: none;
-    transition: transform 150ms ease;
+    margin-right: 8px;
+    vertical-align: 1px;
   }
-  .contact .cta:hover { transform: scale(1.03); border-bottom: none; }
-  .contact .secondary { display: block; margin-top: 16px; font-size: 0.95rem; color: var(--fg-2); }
 
-  /* Footer */
-  footer { padding: 24px 0 40px; color: var(--fg-2); font-size: 0.85rem; text-align: center; }
+  /* ── section heads ── */
+  section { margin-bottom: 96px; }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 36px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head .h {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--fg);
+    font-weight: 700;
+  }
+  .section-head .meta-h {
+    font-size: 11px;
+    color: var(--fg-2);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
 
-  /* Responsive */
-  @media (max-width: 640px) {
-    header { padding: 40px 0 24px; }
-    header h1 { font-size: 1.7rem; }
-    section { padding: 40px 0; }
-    .exp { grid-template-columns: 1fr; gap: 8px; }
+  /* ── BUILT (projects, poster style) ── */
+  .built { display: flex; flex-direction: column; gap: 56px; }
+  .proj {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 0 16px;
+    align-items: baseline;
+    transition: transform 250ms ease;
+  }
+  .proj:hover { transform: translateX(6px); }
+  .proj .num {
+    color: var(--fg-3);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding-top: 14px;
+    font-variant-numeric: tabular-nums;
+    transition: color 250ms ease;
+  }
+  .proj:hover .num { color: var(--accent); }
+  .proj .body { min-width: 0; }
+  .proj .title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 14px;
+    margin-bottom: 8px;
+  }
+  .proj .title {
+    font-size: clamp(34px, 6.5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    transition: color 250ms ease;
+  }
+  .proj:hover .title { color: var(--accent); }
+  .proj .tag {
+    color: var(--fg-2);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--line-2);
+  }
+  .proj .tag.live {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: transparent;
+  }
+  .proj .tag.live::before {
+    content: "";
+    display: inline-block;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 6px;
+    vertical-align: 2px;
+  }
+  .proj .desc {
+    color: var(--fg);
+    margin-top: 4px;
+    margin-bottom: 12px;
+    max-width: 580px;
+    font-size: 14px;
+  }
+  .proj .desc strong { font-weight: 500; color: var(--fg); }
+  .proj .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    color: var(--fg-2);
+    font-size: 12px;
+  }
+  .proj .stack span:not(:last-child)::after { content: " · "; color: var(--fg-3); margin: 0 2px; }
+  .proj .year { white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .proj .link {
+    color: var(--fg-2);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    margin-left: 16px;
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+  .proj .link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── WORKED (jobs, table style) ── */
+  .worked {
+    border-top: 1px solid var(--line);
+  }
+  .worked .row {
+    display: grid;
+    grid-template-columns: 110px 1fr 160px;
+    gap: 0 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line-2);
+    align-items: baseline;
+    font-size: 13px;
+    transition: background 200ms ease, padding 200ms ease;
+  }
+  .worked .row:hover {
+    background: var(--line-2);
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 6px;
+  }
+  .worked .row .y {
+    color: var(--fg-2);
+    font-variant-numeric: tabular-nums;
+    font-size: 12px;
+  }
+  .worked .row.current .y {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .worked .row.current .y::before {
+    content: "● ";
+    color: var(--accent);
+  }
+  .worked .row .role {
+    font-weight: 500;
+    color: var(--fg);
+    font-size: 14px;
+  }
+  .worked .row .co {
+    color: var(--fg-2);
+    text-align: right;
+    font-size: 13px;
+  }
+
+  /* ── now ── */
+  .now {
+    border-left: 2px solid var(--accent);
+    padding: 6px 0 6px 18px;
+    margin-bottom: 96px;
+    color: var(--fg);
+    font-size: 14px;
+    max-width: 560px;
+  }
+  .now .label {
+    display: block;
+    color: var(--fg-2);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  /* ── contact ── */
+  .contact { margin-bottom: 80px; }
+  .contact .ask {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    max-width: 560px;
+  }
+  .contact .email {
+    display: inline-block;
+    font-size: clamp(20px, 3.5vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    border-bottom: 2px solid var(--fg);
+    padding-bottom: 1px;
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+  .contact .email:hover { color: var(--accent); border-color: var(--accent); }
+  .contact .email::after { content: " ↗"; color: var(--fg-2); font-weight: 400; }
+
+  .elsewhere {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    color: var(--fg-2);
+    font-size: 13px;
+    margin-bottom: 80px;
+  }
+  .elsewhere a {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+  .elsewhere a:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer {
+    color: var(--fg-2);
+    font-size: 11px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 540px) {
+    body { padding: 0 24px; font-size: 13px; }
+    main { padding-top: 56px; }
+    .meta { grid-template-columns: 64px 1fr; gap: 6px 16px; margin-bottom: 64px; }
+    .built { gap: 40px; }
+    .proj { grid-template-columns: 24px 1fr; gap: 0 12px; }
+    .proj .num { font-size: 10px; padding-top: 10px; }
+    .worked .row {
+      grid-template-columns: 90px 1fr;
+      gap: 2px 16px;
+    }
+    .worked .row .co { grid-column: 2; text-align: left; font-size: 12px; }
+    .now { margin-bottom: 64px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
   }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap">
-    <h1>Willies Wanjala<br><span class="role">Senior full-stack & AI engineer · Nairobi, Kenya</span></h1>
-    <p class="tagline">I build production AI and full-stack apps that ship — the kind enterprise clients trust with credit risk scoring, mobile money disbursements, and on-device LLMs.</p>
+<main>
 
-    <div class="stats">
-      <div class="stat"><span class="num">6+</span><span class="label">Years shipping</span></div>
-      <div class="stat"><span class="num">64</span><span class="label">Public repos</span></div>
-      <div class="stat"><span class="num">2,200+</span><span class="label">GitHub contributions/yr</span></div>
-      <div class="stat"><span class="num">3</span><span class="label">Independent products live</span></div>
+  <h1 class="id">
+    <span class="row">Willies</span>
+    <span class="row">Wanjala</span>
+  </h1>
+
+  <dl class="meta">
+    <dt>Role</dt>
+    <dd>Senior full-stack &amp; AI engineer</dd>
+    <dt>Place</dt>
+    <dd>Nairobi, Kenya</dd>
+    <dt>Now</dt>
+    <dd>Building <a href="https://www.kamoa.app">Kamoa</a></dd>
+    <dt>Status</dt>
+    <dd><span class="dot"></span>Open to select projects</dd>
+  </dl>
+
+  <!-- ── BUILT ── -->
+  <section>
+    <div class="section-head">
+      <span class="h">Built</span>
+      <span class="meta-h">Things I made</span>
     </div>
 
-    <div class="links">
-      <a href="https://github.com/willeswa">GitHub</a>
-      <a href="https://www.upwork.com/freelancers/~01eec48d30f7d97c0d">Upwork</a>
-      <a href="https://x.com/willies_wanjala">X / Twitter</a>
-      <a href="mailto:gwiliez@gmail.com">gwiliez@gmail.com</a>
+    <div class="built">
+
+      <article class="proj">
+        <span class="num">01</span>
+        <div class="body">
+          <div class="title-row">
+            <span class="title">DocsBrew</span>
+            <span class="tag live">Live</span>
+            <span class="tag">Founder</span>
+          </div>
+          <p class="desc">A multi-tenant <strong>AI sales chatbot</strong> for SMBs. Web widget + WhatsApp. Discovery Schema makes every tenant vertical-specific without per-customer prompts. Idle infra under $15/mo.</p>
+          <div class="foot">
+            <div class="stack"><span>Python</span><span>FastAPI</span><span>pgvector</span><span>GCP</span><span>Terraform</span></div>
+            <span><a class="link" href="https://docsbrew-prod-dashboard-ji7ylzl44a-uc.a.run.app/">docsbrew.app ↗</a></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <span class="num">02</span>
+        <div class="body">
+          <div class="title-row">
+            <span class="title">Soma CPA</span>
+            <span class="tag">On-device LLM</span>
+          </div>
+          <p class="desc">Offline-first Android exam-prep app running a <strong>quantized 0.8B LLM on-device</strong> via llama.cpp. Local RAG with sqlite-vec + ONNX embeddings. Native LaTeX in AI responses.</p>
+          <div class="foot">
+            <div class="stack"><span>Kotlin</span><span>Compose</span><span>llama.cpp</span><span>ONNX</span></div>
+            <span><a class="link" href="https://github.com/willeswa/soma-cpa">github.com/willeswa/soma-cpa ↗</a></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <span class="num">03</span>
+        <div class="body">
+          <div class="title-row">
+            <span class="title">Totem</span>
+            <span class="tag live">Play Store</span>
+          </div>
+          <p class="desc">Personal-security app. <strong>Sentry Mode</strong> — motion-activated theft detection via foreground service + accelerometer. Real-time community safety map. CameraX evidence capture.</p>
+          <div class="foot">
+            <div class="stack"><span>Kotlin</span><span>Compose</span><span>Supabase</span><span>CameraX</span></div>
+            <span><a class="link" href="https://play.google.com/store/apps/details?id=com.fornanei.totem">play.google ↗</a></span>
+          </div>
+        </div>
+      </article>
+
     </div>
+  </section>
+
+  <!-- ── WORKED ── -->
+  <section>
+    <div class="section-head">
+      <span class="h">Worked</span>
+      <span class="meta-h">Where I've shipped</span>
+    </div>
+
+    <div class="worked">
+      <div class="row current">
+        <span class="y">2025 — now</span>
+        <span class="role">Senior Software Engineer</span>
+        <span class="co">Kamoa Ltd. · Nairobi</span>
+      </div>
+      <div class="row">
+        <span class="y">2023 — 24</span>
+        <span class="role">Software Engineer II</span>
+        <span class="co">Jumba · Nairobi</span>
+      </div>
+      <div class="row">
+        <span class="y">2022 — 23</span>
+        <span class="role">Android Developer</span>
+        <span class="co">Baobab Circle · Remote</span>
+      </div>
+      <div class="row">
+        <span class="y">2020 — 22</span>
+        <span class="role">Technical Specialist</span>
+        <span class="co">Influx · Remote</span>
+      </div>
+      <div class="row">
+        <span class="y">2019</span>
+        <span class="role">Software Developer</span>
+        <span class="co">Andela · Nairobi</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="now">
+    <span class="label">Currently</span>
+    Architecting the credit-risk platform at Kamoa. Tinkering with on-device retrieval. Open to one outside project at a time.
   </div>
-</header>
 
-<section class="about">
-  <div class="wrap">
-    <h2>About</h2>
-    <p class="lead">I'm a senior engineer working at the seam of AI, mobile, and serverless. I'm currently building the platform behind enterprise credit-risk scoring and mobile-money disbursements at <a href="https://www.kamoa.app">Kamoa</a>. On the side I build and ship independent products end-to-end.</p>
-    <p>I'm best at the full-stack territory where most engineers stop: shipping AI-augmented mobile + web apps end-to-end, on real cloud infrastructure that won't fall over under load. I default to clean architecture (monorepo discipline, typed APIs, observability from day one), and my code goes to production — not into a drawer.</p>
-    <p class="muted">If you're shipping an AI/LLM product, building a serverless backend, or rebuilding a mobile app the right way — let's talk.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Selected work</h2>
-    <div class="projects">
-
-      <div class="project">
-        <h3>DocsBrew <span class="badge live">Live · Founder</span></h3>
-        <p class="tagline">A multi-tenant AI sales chatbot for SMBs, deployed across an embeddable web widget and the WhatsApp Business API.</p>
-        <p>Designed an LLM-generated Discovery Schema that makes every bot vertical-specific, removing per-customer prompt engineering. The Unified Sales Agent uses tool-calling (<code>search_products</code>, <code>search_docs</code>, <code>capture_lead</code>) over a Postgres + pgvector RAG pipeline, with async lead scoring. Provisioned the entire stack with Terraform on GCP Cloud Run — idle infra under $15/month with horizontal scale-out under load.</p>
-        <div class="stack">
-          <span>Python</span><span>FastAPI</span><span>Postgres</span><span>pgvector</span><span>RAG</span><span>LLM tool-calling</span><span>GCP Cloud Run</span><span>Terraform</span><span>WhatsApp Business API</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>Soma CPA <span class="badge">Android</span></h3>
-        <p class="tagline">An offline-first Android app running a quantized LLM entirely on-device for KASNEB CPA exam revision.</p>
-        <p>Engineered a local Retrieval-Augmented Generation pipeline on Android: text embeddings via ONNX Runtime, real-time vector search with sqlite-vec + Room. Integrated llama.cpp to run a quantized 0.8B-parameter Qwen 3.5 model on-device, enabling intelligent offline explanations of complex accounting concepts with low memory overhead. Native LaTeX rendering (AndroidMath + Markwon) for accounting formulas, T-accounts, and financial statements within AI-generated responses.</p>
-        <div class="stack">
-          <span>Kotlin</span><span>Jetpack Compose</span><span>llama.cpp</span><span>ONNX Runtime</span><span>sqlite-vec</span><span>Room</span><span>RAG</span>
-        </div>
-        <div class="links-row">
-          <a href="https://github.com/willeswa/somadocs">github.com/willeswa/somadocs</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>Totem <span class="badge live">Live · Play Store</span></h3>
-        <p class="tagline">Personal-security Android app — real-time anti-theft monitoring, hidden-surveillance detection, and a global safety map.</p>
-        <p>Engineered mission-critical background monitoring using Android Foreground Services + accelerometer to power "Sentry Mode" — gapless motion-activated theft protection and door-entry alerts. Architected a Supabase backend for security log sync, Google Sign-In, and real-time community safety alerts. Custom CameraX + WorkManager pipelines for emergency photo evidence ("SnapShare"), and RevenueCat for premium subscriptions.</p>
-        <div class="stack">
-          <span>Kotlin</span><span>Jetpack Compose</span><span>Supabase</span><span>CameraX</span><span>WorkManager</span><span>RevenueCat</span><span>Google Maps</span>
-        </div>
-        <div class="links-row">
-          <a href="https://play.google.com/store/apps/details?id=com.fornanei.totem">View on Google Play</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>Kamoa Alternative Database <span class="badge">Enterprise B2B SaaS</span></h3>
-        <p class="tagline">Event-driven serverless platform for real-time enterprise credit-risk scoring.</p>
-        <p>Architected on AWS CDK + SST + AppSync. Integrated third-party credit bureaus and ML models via EventBridge, orchestrating complex async document workflows and ETL pipelines. Built tiered enterprise API access controls, data privacy governance, and rate limiting via API Gateway + Cognito. Engineered Next.js client portals in a Turborepo monorepo.</p>
-        <div class="stack">
-          <span>TypeScript</span><span>AWS Lambda</span><span>AWS AppSync</span><span>EventBridge</span><span>DynamoDB</span><span>Next.js</span><span>Turborepo</span><span>Terraform</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>Kamoa App v2 <span class="badge">Cross-Platform Mobile</span></h3>
-        <p class="tagline">Production fintech mobile app with on-device M-Pesa statement parsing.</p>
-        <p>Spearheaded the React Native + Expo Router rebuild of the core mobile app with secure end-to-end auth via AWS Amplify. Optimized global state with Zustand + data fetching with SWR. Built an on-device feature to parse M-Pesa statements without uploading them to the server. Automated CI/CD via GitHub Actions + EAS Build, with Firebase Crashlytics for monitoring.</p>
-        <div class="stack">
-          <span>React Native</span><span>Expo Router</span><span>TypeScript</span><span>Zustand</span><span>SWR</span><span>AWS Amplify</span><span>EAS Build</span>
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>Jumba <span class="badge">B2B Mobile</span></h3>
-        <p class="tagline">Cross-platform B2B mobile app for the construction supply chain — MVP to production-ready.</p>
-        <p>Led the development of Jumba's mobile app, transforming it from MVP to production-ready with focus on performance, usability, and scalability. Implemented advanced animations using Reanimated, lifting engagement metrics. Streamlined CI/CD pipelines using GitHub Actions + EAS, cutting release times. Set up performance monitoring, error tracking, and analytics instrumentation.</p>
-        <div class="stack">
-          <span>React Native</span><span>Reanimated</span><span>TypeScript</span><span>GitHub Actions</span><span>EAS</span>
-        </div>
-      </div>
-
+  <section class="contact">
+    <div class="section-head">
+      <span class="h">Get in touch</span>
+      <span class="meta-h">Same-day reply</span>
     </div>
-  </div>
-</section>
+    <p class="ask">Working on something where AI, mobile, and serverless meet?</p>
+    <a class="email" href="mailto:gwiliez@gmail.com?subject=Project%20inquiry">gwiliez@gmail.com</a>
+  </section>
 
-<section>
-  <div class="wrap">
-    <h2>Stack</h2>
-    <div class="skill-grid">
-      <div>
-        <h3>Languages</h3>
-        <ul><li>TypeScript</li><li>Kotlin</li><li>Python</li></ul>
-      </div>
-      <div>
-        <h3>Frameworks</h3>
-        <ul><li>React Native · Expo</li><li>React · Next.js</li><li>Jetpack Compose</li><li>FastAPI</li></ul>
-      </div>
-      <div>
-        <h3>Cloud / infra</h3>
-        <ul><li>AWS Lambda · AppSync · EventBridge</li><li>DynamoDB · Cognito</li><li>GCP Cloud Run</li><li>Terraform · AWS CDK · SST</li></ul>
-      </div>
-      <div>
-        <h3>AI / LLM</h3>
-        <ul><li>RAG architectures</li><li>Tool-calling agents</li><li>pgvector · sqlite-vec</li><li>llama.cpp · ONNX Runtime</li><li>On-device inference</li></ul>
-      </div>
-      <div>
-        <h3>How I work</h3>
-        <ul><li>Monorepo discipline (Turborepo)</li><li>Typed APIs (GraphQL + OpenAPI)</li><li>Observability day one</li><li>CI/CD via GitHub Actions + EAS</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
+  <p class="elsewhere">
+    <a href="https://github.com/willeswa">GitHub</a>
+    <a href="https://www.linkedin.com/in/godfrey-wanjala">LinkedIn</a>
+    <a href="https://www.upwork.com/freelancers/~01eec48d30f7d97c0d">Upwork</a>
+    <a href="https://x.com/willies_wanjala">X</a>
+    <a href="https://play.google.com/store/apps/details?id=com.fornanei.totem">Play Store</a>
+  </p>
 
-<section>
-  <div class="wrap">
-    <h2>Experience</h2>
+  <footer>
+    <span>© 2026</span>
+    <span>Hand-built · <a href="https://github.com/willeswa/willeswa.github.io">source</a></span>
+  </footer>
 
-    <div class="exp">
-      <div class="when">2025 — present</div>
-      <div class="what">
-        <h3>Senior Software Engineer</h3>
-        <div class="where">Kamoa Ltd. · Nairobi</div>
-        <p>Architecting an event-driven serverless platform on AWS for real-time enterprise credit-risk scoring (Kamoa Alternative Database). Designing microservices supporting 30+ financial services (KYC, loan approval, disbursements). Spearheaded the React Native rebuild of the core mobile app with on-device M-Pesa statement parsing. Integrated mobile-money platforms (e.g. MTN Congo MoMo) for high-volume digital wallet disbursements.</p>
-      </div>
-    </div>
+</main>
 
-    <div class="exp">
-      <div class="when">2023 — 2024</div>
-      <div class="what">
-        <h3>Software Engineer II</h3>
-        <div class="where">Jumba · Nairobi</div>
-        <p>Led the development of Jumba's cross-platform B2B mobile app, transforming it from MVP to production-ready. Implemented advanced animations using Reanimated, lifting engagement metrics. Streamlined CI/CD via GitHub Actions + EAS.</p>
-      </div>
-    </div>
-
-    <div class="exp">
-      <div class="when">2022 — 2023</div>
-      <div class="what">
-        <h3>Android Developer</h3>
-        <div class="where">Baobab Circle · Remote</div>
-        <p>Owned the Android engineering stack for two consumer-facing healthcare apps. Led the migration of legacy Java codebases to modern Kotlin, introducing Jetpack Compose and MVVM. Shipped features that improved patient engagement and remote health monitoring.</p>
-      </div>
-    </div>
-
-    <div class="exp">
-      <div class="when">2019</div>
-      <div class="what">
-        <h3>Software Developer</h3>
-        <div class="where">Andela · Nairobi</div>
-        <p>Built and deployed RESTful APIs with focus on clean architecture, modularity, and test coverage. Set up CI/CD pipelines using GitHub Actions, CircleCI, and Heroku.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact">
-  <div class="wrap">
-    <h2>Let's build something</h2>
-    <p>I take a small number of clients at a time so I can stay deeply in the weeds with each one. If you're shipping an AI/LLM product, a serverless backend, or rebuilding a mobile app the right way, send me a message — I usually reply same-day.</p>
-    <a class="cta" href="mailto:gwiliez@gmail.com?subject=Project%20inquiry">Email me →</a>
-    <span class="secondary">Or find me on <a href="https://github.com/willeswa">GitHub</a> · <a href="https://www.upwork.com/freelancers/~01eec48d30f7d97c0d">Upwork</a> · <a href="https://x.com/willies_wanjala">X</a></span>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    Built by Willies Wanjala · open-sourced at <a href="https://github.com/willeswa/willeswa.github.io">github.com/willeswa/willeswa.github.io</a>
-  </div>
-</footer>
+<script>
+  console.log("%cWilliesWanjala  ·  gwiliez@gmail.com","color:#b73f1d;font:500 14px JetBrains Mono,monospace");
+</script>
 
 </body>
 </html>
