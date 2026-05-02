@@ -298,6 +298,15 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
+    align-items: center;
+  }
+  footer .visits {
+    color: var(--fg-3);
+    font-variant-numeric: tabular-nums;
+  }
+  footer .visits .n {
+    color: var(--fg-2);
+    font-weight: 500;
   }
 
   @media (max-width: 540px) {
@@ -459,13 +468,40 @@
 
   <footer>
     <span>© 2026</span>
+    <span class="visits"><span class="n" id="visit-count">—</span> visits</span>
     <span>Hand-built · <a target="_blank" rel="noopener" href="https://github.com/willeswa/willeswa.github.io">source</a></span>
   </footer>
 
 </main>
 
+<!--
+  Visitor analytics — GoatCounter (free, privacy-respecting, no cookies, no PII).
+  TO ACTIVATE:
+    1. Sign up free at https://www.goatcounter.com/signup (30 sec — pick your subdomain, e.g. "willeswa")
+    2. Replace YOURCODE below with the subdomain you chose
+    3. Redeploy. Dashboard lives at https://YOURCODE.goatcounter.com
+-->
+<script data-goatcounter="https://willeswa.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 <script>
   console.log("%cWilliesWanjala  ·  gwiliez@gmail.com","color:#b73f1d;font:500 14px JetBrains Mono,monospace");
+
+  // Visit counter — uses abacus.jasoncameron.dev (free, no signup, returns JSON).
+  // Counts unique hits per session via the IP-based namespace+key.
+  (function(){
+    const el = document.getElementById("visit-count");
+    if (!el) return;
+    fetch("https://abacus.jasoncameron.dev/hit/willeswa.github.io/visits")
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (d && typeof d.value === "number") {
+          el.textContent = d.value.toLocaleString();
+        } else {
+          el.parentNode.style.display = "none"; // fail silent
+        }
+      })
+      .catch(() => { el.parentNode.style.display = "none"; });
+  })();
 </script>
 
 </body>
